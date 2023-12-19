@@ -1,0 +1,23 @@
+.parallax-section {
+  position: relative;
+  overflow: hidden;
+  color: white;
+}
+
+.parallax-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("https://www.shutterstock.com/fr/image-photo/beautiful-young-concentrated-business-woman-wearing-2250866885")
+    center center / cover no-repeat;
+  filter: blur(8px);
+  z-index: -1;
+  background-attachment: fixed;
+}
+
+.text-content {
+  position: relative;
+  z-index: 1;
+}

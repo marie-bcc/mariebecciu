@@ -1,0 +1,92 @@
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Animation h1 */
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.slide-in-top {
+  animation: slideInFromTop 1s forwards;
+}
+
+.gradient-on-hover:hover {
+  background-image: linear-gradient(
+    to right,
+    #7dd3b0,
+    #3f83f8,
+    #9333ea
+  ); /* Ceci est une approximation des couleurs fournies: from-green-300 via-blue-500 to-purple-600 */
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.nk-scrollarrow-btn {
+  position: fixed;
+  bottom: 10%; /* ajustez selon vos besoins */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333; /* couleur d'arrière-plan */
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px; /* espacement interne pour donner de la taille au bouton */
+  border-radius: 5px; /* coins arrondis */
+  color: #fff; /* couleur de l'icône */
+}
+
+.nk-scrollarrow-btn:hover {
+  background-color: #555; /* couleur d'arrière-plan au survol */
+}
+
+.svg-inline--fa {
+  width: 20px; /* taille de l'icône */
+  height: 20px; /* taille de l'icône */
+}
+
+.relief-text {
+  text-shadow: 0 10px 2px rgba(0, 0, 0, 0.2);
+}
+
+.article:hover .overlay {
+  opacity: 1;
+  z-index: 10;
+}
+
+.article:hover img {
+  filter: blur(5px);
+}
+
+.nk-btn-canvas.dark .nk-btn .nk-btn-background,
+.nk-btn-canvas.dark .nk-btn-glow {
+  background: linear-gradient(45deg, #c6eaff, #ccbfff 50%, #f8c7ff);
+}
+
+.nk-btn-canvas .nk-btn-glow {
+  background: linear-gradient(to right, #d1fae5, #3b82f6, #9333ea);
+
+  filter: blur(5px);
+  z-index: -1;
+  width: 150%; /* Augmenter la taille par rapport à la taille du bouton */
+  height: 130%;
+  top: -25%; /* Centrer le fond flou par rapport au bouton */
+  left: -25%;
+  border-radius: 15px; /* Coins arrondis */
+}
+
+.article {
+  transform: translateY(100px);
+  opacity: 0;
+  transition: transform 0.5s, opacity 0.5s;
+}
+
+.article.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
