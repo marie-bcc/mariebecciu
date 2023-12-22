@@ -98,15 +98,6 @@ const SkillsSection = () => {
               </div>
             ))}
           </div>
-          <div className="mt-4 sm:mt-8">
-            <a
-              href="/cv.pdf"
-              className="text-lg text-blue-500 hover:underline"
-              download
-            >
-              Télécharger mon CV
-            </a>
-          </div>
         </div>
       </div>
     );
