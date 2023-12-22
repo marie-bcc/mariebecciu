@@ -68,35 +68,45 @@ const SkillsSection = () => {
     ];
 
     return (
-      <div id="formations" className="bg-gray-800 mt-10 p-10 md:p-20">
-        <h2 className="text-center text-4xl md:text-5xl lg:text-6xl text-white relief-text pb-5 md:pb-10">
-          Formations
-        </h2>
-        <div className="mt-6 grid grid-cols-1 gap-6 md:mt-12 md:grid-cols-2 text-white place-items-center">
-          {formations.map((item, index) => (
-            <div
-              key={index}
-              className="flex flex-col items-center text-center gap-2"
+      <div className="flex justify-center">
+        {" "}
+        {/* Wrapper pour le centrage horizontal */}
+        <div
+          id="formations"
+          className="bg-gray-800 mt-10 p-4 sm:p-10 mx-auto text-center w-full max-w-4xl min-w-[300px]" // max-w-4xl est un exemple, ajustez selon la largeur désirée
+        >
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-white relief-text pb-3 sm:pb-5 md:pb-10">
+            Formations
+          </h2>
+
+          <div className="mt-4 sm:mt-6 grid grid-cols-1 gap-4 md:gap-6 md:mt-12 md:grid-cols-2 lg:grid-cols-3 text-white place-items-center">
+            {formations.map((item, index) => (
+              <div
+                key={index}
+                className="flex flex-col items-center text-center gap-2"
+              >
+                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold">
+                  {item.title}
+                </h3>
+                <ul className="flex gap-2 flex-wrap justify-center">
+                  {item.skills.map((skill, idx) => (
+                    <li key={idx} className="my-1">
+                      {getIcon(skill)}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+          <div className="mt-4 sm:mt-8">
+            <a
+              href="/cv.pdf"
+              className="text-sm sm:text-lg text-blue-500 hover:underline"
+              download
             >
-              <h3 className="text-xl md:text-2xl font-semibold">
-                {item.title}
-              </h3>
-              <ul className="flex gap-2">
-                {item.skills.map((skill, idx) => (
-                  <li key={idx}>{getIcon(skill)}</li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-        <div className="text-center mt-8">
-          <a
-            href="../Img/cv.pdf"
-            className="text-lg text-blue-500 hover:underline"
-            download
-          >
-            Télécharger mon CV
-          </a>
+              Télécharger mon CV
+            </a>
+          </div>
         </div>
       </div>
     );
